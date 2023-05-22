@@ -4,10 +4,39 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <link rel="stylesheet" href="/style.css">
+    <title>Encriptador</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+    <div id="app" class="app">
+      <!-- <div class="left_bar app_section">
+        <p>A</p>
+      </div> -->
+      <div class="encoder app_section">
+        <textarea 
+          cols="30"
+          rows="5"
+          class="message"
+          id="messagebox"
+          placeholder="Ingrese el texto aqui..."
+        ></textarea>
+        <p class="advice"><em>&#9432;</em> Solo letras minusculas y sin acentos</p>
+        <div class="buttons app_section">
+          <button class="encode" id="encode">Encriptar</button>
+          <button class="decode" id="decode">Desencriptar</button>
+        </div>
+      </div>
+      <div class="result">
+        <textarea 
+          cols="30" 
+          rows="5"
+          id="result"
+          class="result_text"
+          disabled
+        ></textarea>
+        <button class="copy_button">Copiar</button>
+      </div>
+    </div>
+    <script src="/main.js"></script>
   </body>
 </html>
