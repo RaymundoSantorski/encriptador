@@ -2,14 +2,32 @@ let messagebox = document.getElementById('messagebox');
 let resultbox = document.getElementById('result');
 let encodeButton = document.getElementById('encode');
 let decodeButton = document.getElementById('decode');
+let copyButton = document.getElementById('copy');
+let loadDiv = document.getElementById('loadDiv');
+let copyDiv = document.getElementById('copyDiv');
 
 encodeButton.addEventListener('click', (e) => {
-    resultbox.value = encode(messagebox.value);
+    showResult(encode(messagebox.value));
 });
 
 decodeButton.addEventListener('click', (e) => {
-    decode(messagebox.value);
+    showResult(decode(messagebox.value));
 });
+
+copyButton.addEventListener('click', () => {
+    loadDiv.classList.remove('hide');
+    copyDiv.classList.add('hide');
+    navigator.clipboard.writeText(resultbox.value)
+    .then(() => {
+        loadDiv.classList.add('hide');
+        copyDiv.classList.remove('hide');
+    })
+    .catch(err => {});
+});
+
+function showResult(result){
+    resultbox.value = result;
+}
 
 messagebox.addEventListener('keyup', () => {
     const str = messagebox.value;
@@ -40,6 +58,6 @@ function decode(hash){
         .replaceAll('ai', 'a')
         .replaceAll('imes', 'i')
         .replaceAll('enter', 'e');
-        console.log(decodedText);
-    }
+    return decodedText;
+}
     
