@@ -113,10 +113,11 @@
   width: 95%;
   border: none;
   resize: none;
-  
+  user-select: none;
 }
 
 .copy_button{
+  display: flex;
   height: 2rem;
   width: 95%;
   border-radius: 5px;
@@ -126,5 +127,64 @@
   color: var(--primary-button);
   font-weight: bold;
   font-size: 1rem;
-  background-color: var(--color);
+  background-color: var(--primary-button);
+  text-align: center;
+  justify-content: center;
+}
+
+#loadDiv{
+  height: 1.8rem;
+  width: 1.8rem;
+  border-radius: 50%;
+  border: 2px solid var(--color);
+  border-left-color: #ededed80;
+  border-top-color: #ededed60;
+  border-right-color: #ededed40;
+  animation-duration: 1s;
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+}
+
+#copyDiv{
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  color: var(--color);
+}
+
+@keyframes rotate{
+  10%{
+    transform: rotate(36deg);
+  }
+  20%{
+    transform: rotate(72deg);
+  }
+  30%{
+    transform: rotate(108deg);
+  }
+  40%{
+    transform: rotate(144deg);
+  }
+  50%{
+    transform: rotate(180deg);
+  }
+  60%{
+    transform: rotate(216deg);
+  }
+  70%{
+    transform: rotate(252deg);
+  }
+  80%{
+    transform: rotate(288deg);
+  }
+  90%{
+    transform: rotate(324deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.hide{
+  display: none;
 }
