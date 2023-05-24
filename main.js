@@ -5,6 +5,8 @@ let decodeButton = document.getElementById('decode');
 let copyButton = document.getElementById('copy');
 let loadDiv = document.getElementById('loadDiv');
 let copyDiv = document.getElementById('copyDiv');
+let empty = document.getElementById('empty_space');
+let nonEmpty = document.getElementById('non_empty');
 
 encodeButton.addEventListener('click', (e) => {
     showResult(encode(messagebox.value));
@@ -28,10 +30,21 @@ copyButton.addEventListener('click', () => {
             copyButton.classList.remove('copied');
         }, 1500);
     })
-    .catch(err => {});
+    .catch(err => {
+        loadDiv.classList.add('hide');
+        copyDiv.classList.remove('hide');
+        copyButton.classList.add('copied');
+        copyDiv.innerHTML = 'No copiado!';
+        setTimeout(() => {
+            copyDiv.innerHTML = 'Copiar';
+            copyButton.classList.remove('copied');
+        }, 1500);    
+    });
 });
 
 function showResult(result){
+    empty.classList.add('hide');
+    nonEmpty.classList.remove('hide');
     resultbox.value = result;
 }
 
