@@ -27,19 +27,29 @@
         </div>
       </div>
       <div class="result">
-        <textarea 
-          cols="30" 
-          rows="5"
-          id="result"
-          class="result_text"
-          disabled
-        ></textarea>
-        <div 
-          class="copy_button"
-          id="copy"
-        >
-          <div id="copyDiv" class="">Copiar</div>
-          <div id="loadDiv" class="hide"></div>
+        <div class="empty_space" id="empty_space">
+          <img 
+            src="./public/nothing-here-yet-8580740-6763396.png" 
+            alt="nothing here yet"
+            class="empty_space_img"
+          >
+          <p>Encripte o desencripte un texto</p>
+        </div>
+        <div class="non_empty hide" id="non_empty"> 
+          <textarea 
+            cols="30" 
+            rows="5"
+            id="result"
+            class="result_text"
+            disabled
+          ></textarea>
+          <div 
+            class="copy_button"
+            id="copy"
+          >
+            <div id="copyDiv" class="">Copiar</div>
+            <div id="loadDiv" class="hide"></div>
+        </div>
         </div>
       </div>
     </div>
