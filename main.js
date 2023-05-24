@@ -4,8 +4,6 @@ const buttonDecode = document.getElementsByClassName('button_decode')[0];
 const buttonEncode = document.getElementsByClassName('button_encode')[0];
 const buttonCopy = document.getElementsByClassName('button_copy')[0];
 
-// replace(/[^0-9a-zA-Z. ]/g, '')
-
 textEncode.addEventListener('keyup', () => {
     const aux = textEncode.value;
     const text = aux.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^0-9a-zA-Z ]/g, '').toLowerCase();
@@ -21,8 +19,14 @@ buttonDecode.addEventListener('click', () => {
 });
 
 buttonCopy.addEventListener('click', () => {
-    navigator.clipboard.writeText(textResult.value);
-})
+    navigator.clipboard.writeText(textResult.value)
+    .then(() => {
+        buttonCopy.innerHTML = 'Copiado!';
+        setTimeout(() => {
+            buttonCopy.innerHTML = 'Copiar';
+        }, 1000);
+    })
+});
 
 function showResult(result){
     textResult.value = result;
