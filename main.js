@@ -3,6 +3,8 @@ const textResult = document.getElementById('text_result');
 const buttonDecode = document.getElementsByClassName('button_decode')[0];
 const buttonEncode = document.getElementsByClassName('button_encode')[0];
 const buttonCopy = document.getElementsByClassName('button_copy')[0];
+const nonContent = document.getElementsByClassName('non_content')[0];
+const resultContent = document.getElementsByClassName('result_content')[0];
 
 textEncode.addEventListener('keyup', () => {
     const aux = textEncode.value;
@@ -29,6 +31,8 @@ buttonCopy.addEventListener('click', () => {
 });
 
 function showResult(result){
+    nonContent.classList.add('hide');
+    resultContent.classList.remove('hide');
     window.scrollTo(0, document.body.scrollHeight);
     textResult.value = result;
 }
