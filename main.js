@@ -29,6 +29,7 @@ buttonCopy.addEventListener('click', () => {
 });
 
 function showResult(result){
+    window.scrollTo(0, document.body.scrollHeight);
     textResult.value = result;
 }
 
