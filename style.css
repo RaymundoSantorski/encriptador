@@ -148,7 +148,23 @@ body{
 }
 
 @media (orientation: portrait){
-  
+  body{
+    max-height: 200vh;
+    height: 200vh;
+    background: var(--softgrey);
+  }
+  .content{
+    flex-direction: column;
+  }
+  .encoder{
+    width: 100%;
+  }
+  .result{
+    width: 100%;
+  }
+  .encoder>label{
+    margin-bottom: 20px;
+  }
 }
 
 .hide{
