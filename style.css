@@ -1,7 +1,7 @@
 /* Variables globales */
 :root{
-  --softgrey: #e0e0e0;
-  --white: #fdfdfd;
+  --softgrey: #eae0f0;
+  --white: #fafdff;
   --blue: #1f5fff;
 }
 
@@ -16,9 +16,9 @@ body{
   display: flex;
   max-width: 100vw;
   flex-direction: column;
-  min-height: 110vh;
-  height: fit-content;
-  background: linear-gradient( var(--white) 30%,var(--softgrey));
+  max-height: 100vh;
+  height: 100vh;
+  background: linear-gradient( var(--white),var(--softgrey));
 }
 
 /* Navbar */
@@ -34,6 +34,7 @@ body{
 .content{
   display: flex;
   flex-direction: row;
+  justify-content: center;
   padding: 20px;
   width: 100%;
 }
@@ -45,10 +46,11 @@ body{
   padding: 10px;
   width: calc(65% - 70px);
   padding: 20px;
+  max-width: 515px;
 }
 
 #text_encode{
-  height: 80%;
+  height: calc(100% - 60px - 2.5rem);
   border: none;
   outline: none;
   resize: none;
@@ -63,12 +65,12 @@ body{
   font-size: .75rem;
   margin-bottom: 10px;
   font-weight: bold;
+  height: 20px;
   width: 100%;
   text-align: center;
 }
 
 .buttons{
-  height: calc(25%);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -80,13 +82,13 @@ body{
   border-radius: 8px;
   outline: none;
   border: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 2px 2px 5px #b0b0ff;
 }
 
 .button_encode, .button_decode{
   width: calc(50% - 10px);
-  font-weight: bold;
-  font-size: 1.1rem;
-  box-shadow: 2px 2px 5px #b0b0ff;
 }
 
 .button_encode{
@@ -94,13 +96,15 @@ body{
   background: linear-gradient(.25turn, #1f5fff 70%, #2f3ffa);
 }
 
-.button_decode{
+.button_decode, .button_copy{
   color: var(--blue);
   background-color: transparent;
   border: 2px solid var(--blue);
 }
 
-.button_encode:active, .button_decode:active{
+.button_encode:active, 
+.button_decode:active,
+.button_copy:active{
   background: var(--white);
   border: 2px solid var(--softgrey);
   color: var(--softgrey);
@@ -110,17 +114,23 @@ body{
 
 /* Result */
 .result{
+  padding: 20px;
+  max-width: 385px;
   width: calc(35% + 70px);
-  height: 82vh;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 2px 2px 10px var(--softgrey);
+  height: calc(90vh - 22px);
+  background: transparent;
 }
 
 .result_content{
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px var(--softgrey);
   width: 100%;
   height: 100%;
-  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #text_result{
@@ -129,7 +139,12 @@ body{
   border: none;
   background-color: transparent;
   outline: none;
-  height: calc(100% - 2.5rem);
+  height: calc(100% - 3rem);
+  padding: 20px;
+}
+
+.button_copy{
+  width: 95%;
 }
 
 @media (orientation: portrait){
