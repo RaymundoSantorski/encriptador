@@ -1,58 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.css">
-    <title>Encriptador</title>
-  </head>
-  <body>
-    <div id="app" class="app">
-      <!-- <div class="left_bar app_section">
-        <p>A</p>
-      </div> -->
-      <div class="encoder app_section">
-        <textarea 
-          cols="30"
-          rows="5"
-          class="message"
-          id="messagebox"
-          placeholder="Ingrese el texto aqui..."
-        ></textarea>
-        <p class="advice"><em>&#9432;</em> Solo letras minusculas y sin acentos</p>
-        <div class="buttons app_section">
-          <button class="encode" id="encode">Encriptar</button>
-          <button class="decode" id="decode">Desencriptar</button>
-        </div>
-      </div>
-      <div class="result">
-        <div class="empty_space" id="empty_space">
-          <img 
-            src="./public/nothing-here-yet-8580740-6763396.png" 
-            alt="nothing here yet"
-            class="empty_space_img"
-          >
-          <p>Encripte o desencripte un texto</p>
-        </div>
-        <div class="non_empty hide" id="non_empty"> 
-          <textarea 
-            cols="30" 
-            rows="5"
-            id="result"
-            class="result_text"
-            disabled
-          ></textarea>
-          <div 
-            class="copy_button"
-            id="copy"
-          >
-            <div id="copyDiv" class="">Copiar</div>
-            <div id="loadDiv" class="hide"></div>
-        </div>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encriptador</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <section class="navbar">
+    <h1>Encriptador de texto</h1>
+  </section>
+  <section class="content">
+    <div class="encoder">
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <label for=""></label>
+      <div class="buttons">
+        <button>Encriptar</button>
+        <button>Desencriptar</button>
       </div>
     </div>
-    <script src="/main.js"></script>
-  </body>
+    <div class="result">
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <button>Copiar</button>
+    </div>
+  </section>
+  <section class="footer">
+    <h2>Raymundo Mateos 2023</h2>
+  </section>
+  <script src="./main.js"></script>
+</body>
 </html>
