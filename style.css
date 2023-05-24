@@ -83,7 +83,7 @@
 }
 
 .encode{
-  background: linear-gradient(0.25turn, var(--primary-button), rgba(0, 130, 250) 70%);
+  background: linear-gradient(0.25turn, var(--primary-button), rgba(30, 130, 250) 70%);
 }
 
 .decode{
@@ -124,13 +124,14 @@
   border: 2px solid var(--primary-button);
   outline: none;
   box-shadow: none;
-  color: var(--primary-button);
   font-weight: bold;
   font-size: 1rem;
-  background-color: var(--primary-button);
+  background-color: var(--color);
   text-align: center;
   justify-content: center;
+  color: var(--primary-button);
 }
+
 
 #loadDiv{
   height: 1.8rem;
@@ -149,7 +150,11 @@
   background-color: transparent;
   height: 100%;
   width: 100%;
-  color: var(--color);
+  color: var(--primary-button);
+}
+
+.copied>#copyDiv{
+  color: var(--gray);
 }
 
 @keyframes rotate{
@@ -187,4 +192,9 @@
 
 .hide{
   display: none;
+}
+
+.copied{
+  border: 2px solid var(--gray);
+  transform: scale(0.95);
 }

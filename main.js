@@ -21,6 +21,12 @@ copyButton.addEventListener('click', () => {
     .then(() => {
         loadDiv.classList.add('hide');
         copyDiv.classList.remove('hide');
+        copyButton.classList.add('copied');
+        copyDiv.innerHTML = 'Copiado!';
+        setTimeout(() => {
+            copyDiv.innerHTML = 'Copiar';
+            copyButton.classList.remove('copied');
+        }, 1500);
     })
     .catch(err => {});
 });
