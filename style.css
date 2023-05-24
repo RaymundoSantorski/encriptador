@@ -155,6 +155,7 @@ body{
   }
   .content{
     flex-direction: column;
+    align-items: center;
   }
   .encoder{
     width: 100%;
